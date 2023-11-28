@@ -67,8 +67,10 @@ notifications.map((obj)=>{
     const timeElement=document.createElement('h4')
     timeElement.textContent=obj.time
     container.appendChild(timeElement)
-    
-containerDiv.appendChild(container)
+    containerDiv.appendChild(container)
+    container.addEventListener('click', function(){
+        container.classList.add('clicked')
+    })
 
 })
 
