@@ -56,6 +56,7 @@ const countElement=document.createElement('div')
 countElement.textContent=notifications.length
 console.log(notifications.length)
 notificationElement.appendChild(countElement)
+const markElement=document.getElementById('mark')
 
 const containerDiv=document.getElementById('container')
 notifications.map((obj, key)=>{
@@ -77,12 +78,13 @@ notifications.map((obj, key)=>{
     container.addEventListener('click', function(){
         container.classList.add('clicked')
         notifications.splice(key,1)
-        countElement.textContent=notifications.length
-
-
-      
+        countElement.textContent=notifications.length   
+    })
+    markElement.addEventListener('click', function(){
+        container.classList.add('marked')
+        notifications.splice(key)
+        countElement.textContent=notifications.length  
         
-       
     })
 
 })
