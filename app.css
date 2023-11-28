@@ -9,6 +9,14 @@
     gap:2rem;
     background-color: rgba(188, 245, 245, 0.171);
 }
+.header{
+    display: flex;
+    justify-content: space-around;
+}
+#notificationCount{
+    display: flex;
+    gap:1rem;
+}
 .notification{
     display: grid;
     grid-template-columns:repeat(4,1fr);

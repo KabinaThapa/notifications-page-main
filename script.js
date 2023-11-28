@@ -51,8 +51,14 @@ const notifications=[
 
 ]
 console.log(notifications)
+const notificationElement=document.getElementById('notificationCount')
+const countElement=document.createElement('div')
+countElement.textContent=notifications.length
+console.log(notifications.length)
+notificationElement.appendChild(countElement)
+
 const containerDiv=document.getElementById('container')
-notifications.map((obj)=>{
+notifications.map((obj, key)=>{
     const container=document.createElement('div')
     container.classList.add('notification')
     const imgElement=document.createElement('img')
@@ -70,7 +76,15 @@ notifications.map((obj)=>{
     containerDiv.appendChild(container)
     container.addEventListener('click', function(){
         container.classList.add('clicked')
+        notifications.splice(key,1)
+        countElement.textContent=notifications.length
+
+
+      
+        
+       
     })
 
 })
+
 
